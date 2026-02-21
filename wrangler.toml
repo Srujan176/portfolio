@@ -1,0 +1,33 @@
+name = "portfolio"
+compatibility_date = "2026-02-21"
+
+# Entry point to your Worker code
+main = "worker/src/index.ts"
+
+# Serve your static site (HTML/CSS/JS, and the PDF you moved into src/)
+[assets]
+directory = "./src"
+binding = "ASSETS"
+
+# Ensure the Worker handles these paths BEFORE static assets.
+# This lets us do D1/KV logic, then return a file (e.g., /resume.pdf with a counter).
+run_worker_first = ["/contact", "/go/*", "/badge", "/resume.pdf"]
+
+[observability]
+enabled = true
+
+# --- Bindings to fill after you create them (see step 4) ---
+# D1
+#[[d1_databases]]
+#binding = "DB"
+#database_name = "resume_db"
+#database_id = "YOUR_D1_DB_ID"
+
+# KV
+#[[kv_namespaces]]
+#binding = "KV"
+#id = "YOUR_KV_NAMESPACE_ID"
+
+# Optional non-secret vars
+[vars]
+OPEN_TO_WORK_DEFAULT = "true"
