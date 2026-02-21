@@ -1,0 +1,9 @@
+{
+  "name": "resume-site-starter",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "preview": "npx serve .",
+    "deploy:worker": "cd worker && wrangler deploy"
+  }
+}

@@ -1,0 +1,7 @@
+
+/*
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; script-src 'self' https://challenges.cloudflare.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://YOUR-WORKER.SUBDOMAIN.workers.dev; frame-src https://challenges.cloudflare.com; base-uri 'self'; form-action 'self' https://YOUR-WORKER.SUBDOMAIN.workers.dev
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
