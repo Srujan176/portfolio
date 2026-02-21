@@ -16,17 +16,16 @@ run_worker_first = ["/contact", "/go/*", "/badge", "/resume.pdf"]
 [observability]
 enabled = true
 
-# --- Bindings to fill after you create them (see step 4) ---
 # D1
-#[[d1_databases]]
-#binding = "DB"
-#database_name = "resume_db"
-#database_id = "YOUR_D1_DB_ID"
+[[d1_databases]]
+binding = "DB"
+database_name = "resume_db"
+database_id = "2c842a63-a1f3-4e43-bbf3-32863d90627b"
 
 # KV
-#[[kv_namespaces]]
-#binding = "KV"
-#id = "YOUR_KV_NAMESPACE_ID"
+[[kv_namespaces]]
+binding = "KV"
+id = "5f01c8e42a294f9cbf1e7541148ce714"
 
 # Optional non-secret vars
 [vars]
