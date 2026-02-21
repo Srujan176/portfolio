@@ -1,0 +1,1 @@
+Place profile.jpg and bg-hero.jpg here. Keep sizes small (<=400KB).

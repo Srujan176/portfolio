@@ -1,7 +1,6 @@
 
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('contact-status');
-
 form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   statusEl.textContent = 'Sending...';
@@ -9,12 +8,9 @@ form?.addEventListener('submit', async (e) => {
   const payload = Object.fromEntries(fd.entries());
   const tokenInput = document.querySelector('[name="cf-turnstile-response"]');
   const turnstileToken = tokenInput ? tokenInput.value : '';
+  if (!turnstileToken) { statusEl.textContent = 'Please complete the Turnstile check and try again.'; return; }
   try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...payload, turnstileToken }),
-    });
+    const res = await fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...payload, turnstileToken }) });
     const data = await res.json().catch(() => ({}));
     if (res.ok) {
       statusEl.textContent = data.message || 'Thanks! Your message has been sent.';
@@ -23,7 +19,7 @@ form?.addEventListener('submit', async (e) => {
     } else {
       statusEl.textContent = data.error || 'Sorry, something went wrong.';
     }
-  } catch (err) {
+  } catch(err) {
     console.error(err);
     statusEl.textContent = 'Sorry, something went wrong.';
   }

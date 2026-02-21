@@ -1,34 +1,30 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Srujan Kumar</title>
-  <meta name="description" content="Resume & portfolio of Srujan Kumar: engineering, architecture, automation." />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/css/styles.css" />
+<html lang="en"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — Srujan Kumar</title>
+<link rel="stylesheet" href="/css/styles.css" />
+<link rel="icon" href="/favicon.ico" />
 </head>
 <body>
-  <header class="container">
-    <a class="brand" href="/">Srujan Kumar</a>
-    <nav class="nav">
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/skills.html">Skills</a>
-      <a href="/experience.html">Experience</a>
-      <a href="/projects.html">Projects</a>
-      <a href="/blog/">Blog</a>
-      <a href="/contact.html">Contact</a>
-      <a class="button" href="/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-    </nav>
-    <img class="badge" src="/badge" alt="Availability badge" />
-  </header>
-  <main class="container">
-
-<section>
+<header class="container site-header">
+  <a class="brand" href="/">Srujan Kumar</a>
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/skills.html">Skills</a>
+    <a href="/experience.html">Experience</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact.html">Contact</a>
+    <a class="button" href="/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+  </nav>
+  <img class="badge" src="/badge" alt="Availability badge" />
+</header>
+<main class="container">
+<section class="card">
   <h1>Contact</h1>
-  <p>Use the form below — I’ll receive your message and reply by email.</p>
-  <form id="contact-form" action="/contact" method="post" class="card">
+  <p>Use the form — I’ll reply by email.</p>
+  <form id="contact-form" action="/contact" method="post" class="contact-form">
     <label>Name <input type="text" name="name" required /></label>
     <label>Email <input type="email" name="email" required /></label>
     <label>Message <textarea name="message" rows="6" required></textarea></label>
@@ -37,13 +33,9 @@
     <p id="contact-status" role="status" aria-live="polite"></p>
   </form>
 </section>
+</main>
+<footer class="container"><small>© <span id="year"></span> Srujan Kumar</small></footer>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="/js/main.js"></script>
 <script src="/js/contact.js"></script>
-
-  </main>
-  <footer class="container">
-    <small>© <span id="year"></span> Srujan Kumar • Built on Cloudflare Workers</small>
-  </footer>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <script src="/js/main.js"></script>
-</body>
-</html>
+</body></html>
