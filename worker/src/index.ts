@@ -32,7 +32,7 @@ export default {
         return handleShortlink(request, env, key);
       }
 
-      if (pathname === "/resume.pdf") {
+      if (pathname === "/Srujan_Kumar_Resume.pdf") {
         return handleResume(request, env);
       }
 
@@ -164,7 +164,7 @@ async function handleShortlink(request: Request, env: Env, key: string) {
   return Response.redirect(target, 302);
 }
 
-/* ------------------------------- resume.pdf ----------------------------- */
+/* ------------------------------- Srujan_Kumar_Resume.pdf ----------------------------- */
 async function handleResume(request: Request, env: Env) {
   // Log but **never** block the download if logging fails
   try {
