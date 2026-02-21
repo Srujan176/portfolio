@@ -1,1 +1,30 @@
-const f=document.getElementById("contact-form");const s=document.getElementById("contact-status");f&&f.addEventListener("submit",async e=>{e.preventDefault();s.textContent="Sending...";const fd=new FormData(f);const payload=Object.fromEntries(fd.entries());const ti=document.querySelector("[name=cf-turnstile-response]");const turnstileToken=ti?ti.value:"";try{const res=await fetch(f.action,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...payload,turnstileToken})});if(!res.ok)throw new Error();const data=await res.json();s.textContent=data.message||"Thanks!";f.reset();window.turnstile&&window.turnstile.reset()}catch(err){s.textContent="Sorry, something went wrong."}})
+
+const form = document.getElementById('contact-form');
+const statusEl = document.getElementById('contact-status');
+
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  statusEl.textContent = 'Sending...';
+  const fd = new FormData(form);
+  const payload = Object.fromEntries(fd.entries());
+  const tokenInput = document.querySelector('[name="cf-turnstile-response"]');
+  const turnstileToken = tokenInput ? tokenInput.value : '';
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...payload, turnstileToken }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok) {
+      statusEl.textContent = data.message || 'Thanks! Your message has been sent.';
+      form.reset();
+      if (window.turnstile) window.turnstile.reset();
+    } else {
+      statusEl.textContent = data.error || 'Sorry, something went wrong.';
+    }
+  } catch (err) {
+    console.error(err);
+    statusEl.textContent = 'Sorry, something went wrong.';
+  }
+});

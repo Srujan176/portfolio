@@ -1,1 +1,25 @@
-body{font-family:system-ui;background:#0b0f14;color:#e8eef2;margin:0;padding:24px} a{color:#5cc8ff}
+
+:root { --bg:#0b0f14; --fg:#e8eef2; --muted:#9ab; --primary:#5cc8ff; --card:#121820; --border:#1e2833; }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial}
+.container{max-width:960px;margin:0 auto;padding:24px}
+header.container{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.brand{font-weight:700;color:var(--fg);text-decoration:none;font-size:1.2rem}
+.nav{display:flex;flex-wrap:wrap;gap:12px}
+.nav a{color:var(--fg);text-decoration:none;opacity:.9;padding:6px 8px;border-radius:8px}
+.nav a.active, .nav a:hover{background:rgba(92,200,255,.15)}
+.badge{height:28px}
+.hero{padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card);margin-top:12px}
+.tagline{color:var(--muted)}
+.cta-row .button{margin-right:12px}
+section{margin:28px 0}
+.grid{display:grid;gap:12px}
+.grid.cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
+.columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+label{display:block;margin:.6rem 0}
+input,textarea{width:100%;padding:.7rem;background:#0e141b;color:var(--fg);border:1px solid #213041;border-radius:8px}
+button{padding:.6rem 1rem;border-radius:8px;border:0;background:var(--primary);color:#001018;font-weight:600;cursor:pointer}
+.secondary{color:var(--primary)}
+footer{color:var(--muted)}
