@@ -29,4 +29,4 @@ id = "5f01c8e42a294f9cbf1e7541148ce714"
 
 # Optional non-secret vars
 [vars]
-OPEN_TO_WORK = "true"
+OPEN_TO_WORK_DEFAULT = "true"
